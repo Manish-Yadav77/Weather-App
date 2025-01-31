@@ -2,6 +2,8 @@
 
 <p align="center"><img src="https://socialify.git.ci/Manish-Yadav77/Weather-App/image?font=Source+Code+Pro&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Circuit+Board&amp;stargazers=1&amp;theme=Dark" alt="project-image"></p>
 
+<p id="description">This React-based weather application provides users with real-time weather information for any location globally, allowing them to easily access current conditions, forecasts, and detailed weather data through a user-friendly interface.</p>
+
 <h2>🚀 Demo</h2>
 
 [https://appsweathers.netlify.app/](https://appsweathers.netlify.app/)
