@@ -48,7 +48,7 @@ const App = () => {
         onChange={(e) => setCity(e.target.value)}
         className="rounded-lg pl-5 bg-gray-700 text-slate-950 text-xl"
       />
-      <button className="text-white mt-5 bg-blue-700 rounded-lg px-5 text-xl" onClick={fetchWeather}>Get Weather</button>
+      <button className="text-white mt-5 bg-blue-700 rounded-lg px-5 text-xl ml-5" onClick={fetchWeather}>Get Weather</button>
 
       {weatherData && (
         <div className="text-white mt-10 mr-30" >
