@@ -46,7 +46,7 @@ const App = () => {
         placeholder="Enter city"
         value={city}
         onChange={(e) => setCity(e.target.value)}
-        className="rounded-lg pl-5 bg-gray-700 text-slate-780 text-xl"
+        className="rounded-lg pl-5 bg-gray-700 text-white text-xl"
       />
       <button className="text-white mt-5 bg-blue-700 rounded-lg px-5 text-xl ml-5" onClick={fetchWeather}>Get Weather</button>
 
