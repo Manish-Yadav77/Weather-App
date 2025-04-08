@@ -39,7 +39,7 @@ const App = () => {
 >
 
 
-    <div className="text-center bg-transparent" >
+    <div className="text-center bg-transparent gap-3" >
       <h1 className="text-3xl font-bold underline">Weather App</h1>
       <input
         type="text"
