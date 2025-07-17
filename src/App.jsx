@@ -6,9 +6,6 @@ const App = () => {
 
   const API_KEY = "425f5f42e21aaae0d2f94ad8dfa6edc4";
 
-  const img='https://plus.unsplash.com/premium_photo-1664112065598-77832fcd9b8f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-
-
   const fetchWeather = async () => {
     if (!city) return;
 
@@ -29,37 +26,38 @@ const App = () => {
   };
 
   return (
-    <div
-  className="w-full h-screen"
-  style={{
-    backgroundImage: `url(${img})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-  }}
->
+    <div className="w-full min-h-screen bg-gradient-to-tr from-gray-100 via-blue-100 to-purple-200 flex flex-col items-center justify-center p-4">
+      <div className="max-w-md w-full bg-white shadow-xl rounded-lg p-6">
+        <h1 className="text-4xl font-extrabold text-blue-800 mb-6 text-center">Weather App 🌦️</h1>
 
-
-    <div className="text-center bg-transparent gap-3" >
-      <h1 className="text-3xl font-bold underline">Weather App</h1>
-      <input
-        type="text"
-        placeholder="Enter city"
-        value={city}
-        onChange={(e) => setCity(e.target.value)}
-        className="rounded-lg pl-5 bg-gray-700 text-white text-xl"
-      />
-      <button className="text-white mt-5 bg-blue-700 rounded-lg px-5 text-xl ml-5" onClick={fetchWeather}>Get Weather</button>
-
-      {weatherData && (
-        <div className="text-white mt-10 mr-30" >
-          <h2 className="text-3xl font-bold ">{weatherData.name}</h2>
-          <p className="text-3xl font-bold mt-5">Temperature: {weatherData.main.temp} °C</p>
-          <p className="text-3xl font-bold mt-5">Weather: {weatherData.weather[0].description}</p>
-          <p className="text-3xl font-bold mt-5">Humidity: {weatherData.main.humidity}%</p>
-          <p className="text-3xl font-bold mt-5">Wind Speed: {weatherData.wind.speed} m/s</p>
+        <div className="flex gap-3 mb-6">
+          <input
+            type="text"
+            placeholder="Enter city"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            className="flex-grow px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-blue-400 text-lg"
+          />
+          <button
+            onClick={fetchWeather}
+            className="bg-blue-700 hover:bg-blue-800 text-white px-6 py-2 rounded-lg text-lg transition-all duration-300"
+          >
+            Get Weather
+          </button>
         </div>
-      )}
-    </div>
+
+        {weatherData && (
+          <div className="bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-6 rounded-lg shadow-inner transition-all duration-300 ease-in-out">
+            <h2 className="text-center text-2xl font-bold text-gray-800 mb-4">{weatherData.name}</h2>
+            <div className="space-y-2 text-gray-700 text-lg">
+              <p>🌡️ Temperature: <span className="font-semibold">{weatherData.main.temp} °C</span></p>
+              <p>🌤️ Weather: <span className="capitalize font-semibold">{weatherData.weather[0].description}</span></p>
+              <p>💧 Humidity: <span className="font-semibold">{weatherData.main.humidity}%</span></p>
+              <p>🌬️ Wind Speed: <span className="font-semibold">{weatherData.wind.speed} m/s</span></p>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
