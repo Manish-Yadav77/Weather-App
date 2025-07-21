@@ -26,11 +26,14 @@ const App = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-tr from-gray-100 via-blue-100 to-purple-200 flex flex-col items-center justify-center p-4">
-      <div className="max-w-md w-full bg-white shadow-xl rounded-lg p-6">
-        <h1 className="text-4xl font-extrabold text-blue-800 mb-6 text-center">Weather App 🌦️</h1>
+    <div className="w-full min-h-screen bg-gradient-to-tr from-gray-100 via-blue-100 to-purple-200 flex items-center justify-center px-4 py-8">
+      <div className="w-full max-w-md bg-white shadow-xl rounded-lg p-6">
+        <h1 className="text-3xl sm:text-4xl font-extrabold text-blue-800 mb-6 text-center">
+          Weather App 🌦️
+        </h1>
 
-        <div className="flex gap-3 mb-6">
+        {/* Responsive input & button stack on small screens */}
+        <div className="flex flex-col sm:flex-row gap-3 mb-6">
           <input
             type="text"
             placeholder="Enter city"
@@ -48,12 +51,28 @@ const App = () => {
 
         {weatherData && (
           <div className="bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 p-6 rounded-lg shadow-inner transition-all duration-300 ease-in-out">
-            <h2 className="text-center text-2xl font-bold text-gray-800 mb-4">{weatherData.name}</h2>
-            <div className="space-y-2 text-gray-700 text-lg">
-              <p>🌡️ Temperature: <span className="font-semibold">{weatherData.main.temp} °C</span></p>
-              <p>🌤️ Weather: <span className="capitalize font-semibold">{weatherData.weather[0].description}</span></p>
-              <p>💧 Humidity: <span className="font-semibold">{weatherData.main.humidity}%</span></p>
-              <p>🌬️ Wind Speed: <span className="font-semibold">{weatherData.wind.speed} m/s</span></p>
+            <h2 className="text-center text-2xl font-bold text-gray-800 mb-4">
+              {weatherData.name}
+            </h2>
+            <div className="space-y-2 text-gray-700 text-base sm:text-lg">
+              <p>
+                🌡️ Temperature:{" "}
+                <span className="font-semibold">{weatherData.main.temp} °C</span>
+              </p>
+              <p>
+                🌤️ Weather:{" "}
+                <span className="capitalize font-semibold">
+                  {weatherData.weather[0].description}
+                </span>
+              </p>
+              <p>
+                💧 Humidity:{" "}
+                <span className="font-semibold">{weatherData.main.humidity}%</span>
+              </p>
+              <p>
+                🌬️ Wind Speed:{" "}
+                <span className="font-semibold">{weatherData.wind.speed} m/s</span>
+              </p>
             </div>
           </div>
         )}
